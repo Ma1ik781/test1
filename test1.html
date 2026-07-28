@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Girlfriend Day ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:linear-gradient(180deg,#ffe6ef,#fff8fb);
+overflow-x:hidden;
+color:#444;
+}
+
+section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:60px 20px;
+text-align:center;
+position:relative;
+}
+
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:opacity 1s ease, transform 1s ease;
+}
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+h1{
+font-size:60px;
+color:#ff4f87;
+}
+
+h2{
+font-size:42px;
+margin-bottom:20px;
+color:#4169E1;
+}
+
+p{
+max-width:700px;
+font-size:20px;
+line-height:1.8;
+}
+
+button{
+margin-top:40px;
+padding:16px 38px;
+border:none;
+border-radius:50px;
+font-size:18px;
+background:#ff5b94;
+color:white;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 10px 25px rgba(255,91,148,.3);
+}
+
+button:hover{
+transform:translateY(-3px);
+background:#ff2d74;
+}
+
+.particle{
+position:fixed;
+top:-20px;
+animation:fall linear infinite;
+pointer-events:none;
+opacity:.8;
+z-index:2;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-10vh) rotate(0deg);
+}
+100%{
+transform:translateY(110vh) rotate(360deg);
+}
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+max-width:750px;
+}
+
+.chat{
+width:340px;
+background:white;
+border-radius:30px;
+padding:20px;
+box-shadow:0 20px 50px rgba(0,0,0,.1);
+}
+
+.msg{
+padding:12px 18px;
+border-radius:20px;
+margin:12px 0;
+max-width:80%;
+animation:fade .8s forwards;
+opacity:0;
+}
+
+.left{
+background:#ececec;
+margin-right:auto;
+}
+
+.right{
+background:#ff5b94;
+color:white;
+margin-left:auto;
+}
+
+@keyframes fade{
+to{
+opacity:1;
+transform:translateY(0);
+}
+from{
+opacity:0;
+transform:translateY(20px);
+}
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+width:90%;
+max-width:1000px;
+}
+
+.reason{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+transition:.4s;
+cursor:pointer;
+}
+
+.reason:hover{
+transform:translateY(-10px) scale(1.04);
+}
+
+footer{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+font-size:28px;
+position:relative;
+}
+
+#intro{
+background:linear-gradient(180deg,#ffccdd,#ffe6ef);
+}
+
+.envelope{
+position:relative;
+width:260px;
+height:170px;
+cursor:pointer;
+}
+
+.env-back{
+position:absolute;
+width:100%;
+height:100%;
+background:#ff8fb3;
+border-radius:10px;
+box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+
+.env-letter{
+position:absolute;
+left:10px;
+right:10px;
+bottom:8px;
+height:85%;
+background:white;
+border-radius:6px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:40px;
+transition:transform .8s ease;
+z-index:1;
+}
+
+.env-flap{
+position:absolute;
+top:0;
+left:0;
+width:0;
+height:0;
+border-left:130px solid transparent;
+border-right:130px solid transparent;
+border-top:90px solid #ff5b94;
+transform-origin:top;
+transition:transform .6s ease;
+z-index:2;
+}
+
+.envelope.open .env-flap{
+transform:rotateX(180deg);
+}
+
+.envelope.open .env-letter{
+transform:translateY(-140px) scale(1.05);
+}
+
+#introHint{
+margin-top:30px;
+font-size:16px;
+color:#a15;
+opacity:.8;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%,100%{opacity:.5;}
+50%{opacity:1;}
+}
+
+.polaroid-wrap{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:35px;
+max-width:1100px;
+}
+
+.polaroid{
+background:white;
+padding:15px 15px 45px 15px;
+box-shadow:0 15px 30px rgba(0,0,0,.15);
+width:220px;
+transition:transform .4s ease;
+position:relative;
+}
+
+.polaroid:nth-child(odd){ transform:rotate(-4deg); }
+.polaroid:nth-child(even){ transform:rotate(4deg); }
+
+.polaroid:hover{
+transform:scale(1.08) rotate(0deg);
+z-index:5;
+}
+
+.polaroid img{
+width:100%;
+height:220px;
+object-fit:cover;
+display:block;
+}
+
+.polaroid span{
+position:absolute;
+bottom:12px;
+left:0;
+right:0;
+text-align:center;
+font-size:15px;
+color:#a15;
+}
+
+#musicPlayer{
+position:fixed;
+bottom:20px;
+right:20px;
+background:white;
+border-radius:50px;
+padding:12px 20px;
+box-shadow:0 15px 35px rgba(0,0,0,.2);
+display:flex;
+align-items:center;
+gap:10px;
+z-index:50;
+cursor:pointer;
+}
+
+#musicPlayer .icon{
+font-size:20px;
+color:#ff5b94;
+}
+
+.bars{
+display:flex;
+align-items:flex-end;
+gap:3px;
+height:18px;
+}
+
+.bars span{
+width:3px;
+background:#ff5b94;
+height:4px;
+border-radius:2px;
+animation:eq 1s infinite ease-in-out;
+}
+
+.bars span:nth-child(2){ animation-delay:.2s; }
+.bars span:nth-child(3){ animation-delay:.4s; }
+
+@keyframes eq{
+0%,100%{height:4px;}
+50%{height:16px;}
+}
+
+#musicPlayer.paused .bars span{
+animation-play-state:paused;
+height:4px;
+}
+
+.spotify-card{
+background:#181818;
+color:white;
+border-radius:20px;
+padding:25px;
+width:340px;
+box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.spotify-top{
+display:flex;
+align-items:center;
+gap:15px;
+margin-bottom:20px;
+text-align:left;
+}
+
+.spotify-art{
+width:65px;
+height:65px;
+border-radius:10px;
+object-fit:cover;
+background:#333;
+flex-shrink:0;
+}
+
+.spotify-title{
+font-size:16px;
+font-weight:600;
+}
+
+.spotify-artist{
+font-size:13px;
+color:#b3b3b3;
+margin-top:4px;
+}
+
+.spotify-progress{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:11px;
+color:#b3b3b3;
+margin-bottom:20px;
+}
+
+.progress-bar{
+flex:1;
+height:4px;
+background:#404040;
+border-radius:5px;
+cursor:pointer;
+}
+
+.progress-fill{
+height:100%;
+width:0%;
+background:#1db954;
+border-radius:5px;
+}
+
+.spotify-controls{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:25px;
+}
+
+.ctrl{
+font-size:20px;
+color:#b3b3b3;
+opacity:.5;
+}
+
+.spotify-play-btn{
+width:50px;
+height:50px;
+border-radius:50%;
+background:#1db954;
+border:none;
+color:white;
+font-size:18px;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 8px 20px rgba(29,185,84,.4);
+transition:.2s;
+margin:0;
+}
+
+.spotify-play-btn:hover{
+transform:scale(1.08);
+background:#1db954;
+}
+
+.secret{
+margin-top:20px;
+font-size:15px;
+color:#ff5b94;
+text-decoration:underline;
+cursor:pointer;
+opacity:.7;
+}
+
+#secretMsg{
+max-width:500px;
+margin-top:20px;
+padding:20px;
+background:white;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+display:none;
+}
+
+#secretMsg.show{
+display:block;
+animation:fade .6s forwards;
+}
+
+.bloom-flower{
+position:fixed;
+pointer-events:none;
+z-index:1000;
+opacity:0;
+transform:scale(0);
+animation:bloomAnim 3.2s ease forwards;
+}
+
+@keyframes bloomAnim{
+0%{ opacity:0; transform:scale(0) rotate(0deg); }
+25%{ opacity:1; transform:scale(1.3) rotate(15deg); }
+60%{ opacity:1; transform:scale(1) rotate(-10deg); }
+100%{ opacity:0; transform:scale(.8) translateY(60px) rotate(20deg); }
+}
+
+@media(max-width:600px){
+h1{ font-size:38px; }
+h2{ font-size:30px; }
+p{ font-size:17px; }
+.chat{ width:90%; }
+.envelope{ width:210px; height:140px; }
+.env-flap{ border-left:105px solid transparent; border-right:105px solid transparent; border-top:72px solid #ff5b94; }
+.polaroid{ width:160px; }
+.polaroid img{ height:160px; }
+#musicPlayer{ padding:10px 16px; }
+.spotify-card{ width:90%; }
+}
+
+</style>
+
+</head>
+<body>
+
+<section id="intro">
+
+<div class="envelope" id="envelope">
+<div class="env-flap"></div>
+<div class="env-letter">❤️</div>
+<div class="env-back"></div>
+</div>
+
+<p id="introHint">Tap the envelope to open it</p>
+
+</section>
+
+<section class="reveal">
+
+<h1>Happy Girlfriend Day ❤️</h1>
+
+<p style="margin-top:30px;">
+I made something special just for you.
+Because you deserve more than just a message.
+</p>
+
+<button onclick="document.getElementById('letter').scrollIntoView({behavior:'smooth'})">
+Open My Heart 💌
+</button>
+
+</section>
+
+<section id="letter" class="reveal">
+
+<div class="card">
+
+<h2>To My Favourite Person ❤️</h2>
+
+<p id="typing"></p>
+
+</div>
+
+</section>
+
+<section class="reveal">
+
+<h2>Our Memories 📸</h2>
+
+<p style="margin-bottom:30px;">Replace these with your own real photos — just swap the file names below.</p>
+
+<div class="polaroid-wrap">
+<div class="polaroid"><img src="photo1.png" alt="Memory 1"><span>My favourite day</span></div>
+<div class="polaroid"><img src="photo2.png" alt="Memory 2"><span>That trip ❤️</span></div>
+<div class="polaroid"><img src="photo3.png" alt="Memory 3"><span>Just us</span></div>
+<div class="polaroid"><img src="photo4.png" alt="Memory 4"><span>Forever grateful</span></div>
+</div>
+
+</section>
+
+<section class="reveal">
+
+<h2>Our Little Conversation 💬</h2>
+
+<div class="chat">
+
+<div class="msg left" style="animation-delay:.5s;">
+Happy Girlfriend Day ❤️
+</div>
+
+<div class="msg right" style="animation-delay:1.5s;">
+Awww 🥺❤️
+</div>
+
+<div class="msg left" style="animation-delay:2.5s;">
+I wanted to do something different this year.
+</div>
+
+<div class="msg left" style="animation-delay:3.5s;">
+So I made this website...
+</div>
+
+<div class="msg right" style="animation-delay:4.5s;">
+You're the sweetest ❤️
+</div>
+
+</div>
+
+</section>
+
+<section class="reveal">
+
+<h2>Our Song 🎧</h2>
+
+<div class="spotify-card">
+
+<div class="spotify-top">
+<img src="album-art.png" class="spotify-art" alt="Album Art">
+<div>
+<div class="spotify-title">Our Song</div>
+<div class="spotify-artist">For You ❤️</div>
+</div>
+</div>
+
+<div class="spotify-progress">
+<span id="curTime">0:00</span>
+<div class="progress-bar" id="progressBar"><div class="progress-fill" id="progressFill"></div></div>
+<span id="durTime">0:00</span>
+</div>
+
+<div class="spotify-controls">
+<span class="ctrl">⏮</span>
+<button id="spotifyPlay" class="spotify-play-btn">▶</button>
+<span class="ctrl">⏭</span>
+</div>
+
+</div>
+
+</section>
+
+<section class="reveal">
+
+<h2>Reasons I Love You ❤️</h2>
+
+<div class="grid">
+
+<div class="reason">
+😊 Your Smile
+</div>
+
+<div class="reason">
+😂 Your Laugh
+</div>
+
+<div class="reason">
+🌸 Your Kindness
+</div>
+
+<div class="reason">
+❤️ The Way You Care
+</div>
+
+<div class="reason">
+🌎 You Make My World Better
+</div>
+
+<div class="reason">
+✨ Simply Because You're You
+</div>
+
+</div>
+
+<div class="secret" onclick="revealSecret()">psst... click here for one more secret 🤫</div>
+
+<div id="secretMsg">
+There's a hidden reason I saved for last: every single version of you — happy, tired, silly, overthinking at 2am — is the version I choose, every time. 🤍
+</div>
+
+</section>
+
+<footer>
+
+<h2>One Last Thing...</h2>
+
+<p>
+I love you more than yesterday,
+<br>
+but less than tomorrow.
+</p>
+
+<button onclick="celebrate()">
+Click Me ❤️
+</button>
+
+</footer>
+
+<div id="musicPlayer" class="paused">
+<span class="icon" id="playIcon">▶</span>
+<div class="bars"><span></span><span></span><span></span></div>
+</div>
+
+<audio id="bgMusic" loop>
+<source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+const envelope=document.getElementById("envelope");
+envelope.addEventListener("click",()=>{
+envelope.classList.add("open");
+document.getElementById("introHint").style.opacity=0;
+setTimeout(()=>{
+document.querySelectorAll("section")[1].scrollIntoView({behavior:"smooth"});
+},900);
+});
+
+const revealEls=document.querySelectorAll(".reveal");
+const observer=new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("active");
+}
+});
+},{threshold:.2});
+revealEls.forEach(el=>observer.observe(el));
+
+const text=`Dear Love,
+
+Happy Girlfriend Day ❤️
+
+Thank you for making every ordinary day feel special.
+
+Every laugh, every call, every memory with you has become one of my favourite parts of life.
+
+I hope this little website reminds you how much you mean to me.
+
+I love you endlessly.
+
+❤️`;
+
+let i=0;
+
+function type(){
+
+if(i<text.length){
+
+document.getElementById("typing").innerHTML+=text.charAt(i);
+
+i++;
+
+setTimeout(type,40);
+
+}
+
+}
+
+type();
+
+function createParticleElement(){
+
+const el=document.createElement("div");
+el.className="particle";
+
+const r=Math.random();
+
+if(r<0.4){
+el.innerHTML='<svg viewBox="0 0 32 29" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg"><path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.7c0,9.4,10.9,15.7,16,20.6c5.1-4.9,16-11.2,16-20.6C32,3.8,28.2,0,23.6,0z" fill="#ffc1d9"/></svg>';
+}else if(r<0.9){
+el.innerHTML="🌹";
+}else{
+el.innerHTML="🌸";
+}
+
+return el;
+
+}
+
+for(let i=0;i<40;i++){
+
+const particle=createParticleElement();
+
+particle.style.left=Math.random()*100+"vw";
+
+particle.style.fontSize=(15+Math.random()*25)+"px";
+
+particle.style.animationDuration=(5+Math.random()*6)+"s";
+
+particle.style.animationDelay=Math.random()*5+"s";
+
+document.body.appendChild(particle);
+
+}
+
+const audio=document.getElementById("bgMusic");
+const player=document.getElementById("musicPlayer");
+const playIcon=document.getElementById("playIcon");
+const spotifyPlayBtn=document.getElementById("spotifyPlay");
+const progressBar=document.getElementById("progressBar");
+const progressFill=document.getElementById("progressFill");
+const curTimeEl=document.getElementById("curTime");
+const durTimeEl=document.getElementById("durTime");
+
+function formatTime(t){
+if(isNaN(t)) return "0:00";
+const m=Math.floor(t/60);
+const s=Math.floor(t%60).toString().padStart(2,"0");
+return `${m}:${s}`;
+}
+
+function toggleMusic(){
+if(audio.paused){
+audio.play();
+}else{
+audio.pause();
+}
+}
+
+function updatePlayUI(){
+const playing=!audio.paused;
+playIcon.textContent=playing?"❚❚":"▶";
+spotifyPlayBtn.textContent=playing?"❚❚":"▶";
+player.classList.toggle("paused",!playing);
+}
+
+audio.addEventListener("play",updatePlayUI);
+audio.addEventListener("pause",updatePlayUI);
+
+audio.addEventListener("timeupdate",()=>{
+if(audio.duration){
+progressFill.style.width=(audio.currentTime/audio.duration*100)+"%";
+}
+curTimeEl.textContent=formatTime(audio.currentTime);
+});
+
+audio.addEventListener("loadedmetadata",()=>{
+durTimeEl.textContent=formatTime(audio.duration);
+});
+
+progressBar.addEventListener("click",(e)=>{
+const rect=progressBar.getBoundingClientRect();
+const ratio=(e.clientX-rect.left)/rect.width;
+if(audio.duration){
+audio.currentTime=ratio*audio.duration;
+}
+});
+
+player.addEventListener("click",toggleMusic);
+spotifyPlayBtn.addEventListener("click",toggleMusic);
+
+function revealSecret(){
+document.getElementById("secretMsg").classList.add("show");
+}
+
+function celebrate(){
+
+const flowers=["🌸","🌸","🌸","🌸","🌸","🌸"];
+
+for(let i=0;i<120;i++){
+
+const f=document.createElement("div");
+
+f.className="bloom-flower";
+
+f.innerHTML=flowers[Math.floor(Math.random()*flowers.length)];
+
+f.style.left=Math.random()*100+"vw";
+
+f.style.top=Math.random()*100+"vh";
+
+f.style.fontSize=(20+Math.random()*30)+"px";
+
+f.style.animationDelay=(Math.random()*0.8)+"s";
+
+document.body.appendChild(f);
+
+setTimeout(()=>f.remove(),3900);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
